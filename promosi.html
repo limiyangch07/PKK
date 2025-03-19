@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Tutor - Asisten Belajar Cerdas</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #f8f9ff;
+            color: #2c3e50;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #4A6EF0 0%, #3B5BDB 100%);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+
+        .nav-logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-logo:hover {
+            transform: rotate(15deg);
+        }
+
+        .navbar h1 {
+            color: white;
+            font-size: 1.8rem;
+            flex-grow: 1;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Introduction Section */
+        .intro {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .intro-image {
+            flex: 1;
+            max-width: 500px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .intro-image img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .intro-content {
+            flex: 1;
+            padding: 2rem;
+        }
+
+        .intro-content h2 {
+            color: #2c3e50;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .intro-content p {
+            color: #4a5568;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        /* CTA Button */
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 1.2rem 2.5rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            background: #4A6EF0;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(74,110,240,0.3);
+        }
+
+        .cta-button:hover {
+            background: #3B5BDB;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(74,110,240,0.4);
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #4A6EF0;
+        }
+
+        .feature-card h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: #2c3e50;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            border-radius: 15px 15px 0 0;
+            margin-top: 4rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .intro {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .intro-image {
+                max-width: 400px;
+            }
+
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 1rem;
+            }
+            
+            .navbar h1 {
+                font-size: 1.5rem;
+            }
+
+            .intro-content h2 {
+                font-size: 2rem;
+            }
+
+            .cta-button {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-logo {
+                width: 50px;
+                height: 50px;
+            }
+
+            .intro-content h2 {
+                font-size: 1.8rem;
+            }
+            
+            .cta-button {
+                font-size: 1.1rem;
+                padding: 1rem 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <img src="logo.png" alt="AI Tutor Logo" class="nav-logo">
+        <h1>AI.TUTOR</h1>
+    </nav>
+
+    <div class="container">
+        <!-- Introduction Section -->
+        <section class="intro">
+            <div class="intro-image">
+                <img src="ilustrasi.png" alt="Ilustrasi Belajar">
+            </div>
+            
+            <div class="intro-content">
+                <h2>Belajar Lebih Cepat dengan Bantuan AI</h2>
+                <p>Dapatkan solusi belajar personal dalam 3 langkah mudah:</p>
+                <ul style="list-style: none; margin: 1.5rem 0;">
+                    <li>📸 Upload soal atau foto pertanyaan</li>
+                    <li>🧠 Dapatkan penjelasan langkah demi langkah</li>
+                    <li>🎥 Simak video pembahasan interaktif</li>
+                </ul>
+                <button class="cta-button">
+                    🚀 Coba Sekarang - Gratis!
+                </button>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Jawaban Instan</h3>
+                <p>Solusi cepat untuk semua jenis soal pelajaran</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📚</div>
+                <h3>Pembahasan Detail</h3>
+                <p>Penjelasan konsep dasar hingga tingkat lanjut</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🎮</div>
+                <h3>Belajar Interaktif</h3>
+                <p>Simulasi visual dan kuis menarik</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>© 2023 AI Tutor. All rights reserved</p>
+        <p>Email: support@aitutor.id | Telepon: (021) 1234-5678</p>
+    </footer>
+</body>
+</html>
